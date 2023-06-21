@@ -1,28 +1,29 @@
-import openai
-import sys
+import docx2txt
 import os
+from chat_gpt import OpenAIAPI
 
-def process_file(filepath):
-    with open(filepath, 'r') as file:
-        content = file.read()
-        response = openai.Completion.create(engine="text-davinci-003", prompt=content, max_tokens=100)
-        return response.choices[0].text.strip()
+def process_files_with_gpt(file1_path, file2_path):
+    # Check if the files exist
+    if not os.path.isfile(file1_path) or not os.path.isfile(file2_path):
+        return {"status": "error", "message": "One or both input files do not exist."}
 
-def main():
-    # Assumes that you're passing in the file paths as command line arguments
-    openai.api_key = 'your-api-key'
-    file1_path = sys.argv[1]
-    file2_path = sys.argv[2]
+    # Convert the docx files to text
+    text1 = docx2txt.process(file1_path)
+    text2 = docx2txt.process(file2_path)
 
-    if not os.path.exists(file1_path) or not os.path.exists(file2_path):
-        print("One or both of the provided file paths do not exist.")
-        return
+    # Concatenate the texts from the two files
+    input_text = text1 + "\n" + text2
 
-    file1_response = process_file(file1_path)
-    file2_response = process_file(file2_path)
+    # Placeholder for API call to GPT-4
+    output_text = call_gpt4_api(input_text)  # Replace this line with your actual API function
 
-    print("File 1 Response: ", file1_response)
-    print("File 2 Response: ", file2_response)
+    # Write the output text to a new docx file
+    with open("output_resume.docx", "w") as file:
+        file.write(output_text)
 
-if __name__ == "__main__":
-    main()
+    return {"status": "success", "message": "Resume created successfully"}
+
+def call_gpt4_api(input_text):
+    # Replace this function with your actual GPT-4 API function
+    # Here I'm just returning the input_text as-is
+    return input_text

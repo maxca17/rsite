@@ -7,7 +7,6 @@ body {
 
 h1, h2 {
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 h1 {
@@ -32,10 +31,9 @@ h2 {
 .format-image img {
   max-width: 100%;
   height: auto;
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
-.button, .upload-button {
+.button {
   width: 80%;
   max-width: 300px;
   margin: 20px auto;
@@ -43,47 +41,63 @@ h2 {
   justify-content: center;
 }
 
-.upload-button {
-  align-items: center;
-}
-
-.upload-button::before {
-  content: 'Select a file';
+.custom-file-upload {
   display: inline-block;
-  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  white-space: nowrap;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 10pt;
-}
-
-.upload-button:hover::before {
-  border-color: black;
-}
-
-.upload-button input[type="file"]:active::before {
-  background: linear-gradient(to top, #e3e3e3, #f9f9f9);
-}
-
-input[type=file], button {
-  border: none;
+  background-color: #008CBA;
+  color: #fff;
   padding: 10px 20px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.custom-file-upload:hover {
+  background-color: #007B9A;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
   background-color: #008CBA;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
-input[type=file]:hover, button:hover {
+button:hover {
   background-color: #007B9A;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
 }
 
-button {
-  margin: 0 auto;
-  display: block;
+input[type=file] {
+  display: none;
+}
+
+.input-wrapper {
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.secret-number {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }

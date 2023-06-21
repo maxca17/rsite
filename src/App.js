@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import resumeImg from './resume.png';
 
 
 const App = () => {
@@ -29,19 +30,19 @@ const App = () => {
     console.log(response.data);
   };
 
-  return (
+return (
     <div>
       <h1>File Upload</h1>
       <div className="format-image">
-      <img src="path/to/your/image.jpg" alt="Resume Format" />
+        <img src={resumeImg} alt="Resume Format" />
       </div>
-        <h2>Upload your current resume information in a word document in the format provided below</h2>
-        <div className='button'>
-        <input type="file" onChange={onFileChange1} />
-      </div>
+      <h2>Upload your current resume information in a word document in the format provided below</h2>
       <div className='button'>
-        <input className='button' type="file" onChange={onFileChange2} />
-      </div>
+        <input type="file" onChange={onFileChange1} />
+        </div>
+        <div className='button'>
+        <input type="file" onChange={onFileChange2} />
+        </div>
       <button onClick={onFilesUpload}>Upload Files!</button>
     </div>
   );

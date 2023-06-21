@@ -1,67 +1,89 @@
 body {
-  background: #f2f2f2;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 h1 {
-  text-align: center;
-  color: #333;
+  color: #444;
+  margin-top: 50px;
+  font-size: 2em;
 }
 
-div {
+h2 {
+  color: #666;
+  font-size: 1.2em;
+  margin: 20px auto 40px;
+}
+
+.format-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-input[type="file"] {
-  margin: 20px 0;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.format-image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+.button, .upload-button {
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-button {
+  align-items: center;
+}
+
+.upload-button::before {
+  content: 'Select a file';
+  display: inline-block;
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.upload-button:hover::before {
+  border-color: black;
+}
+
+.upload-button input[type="file"]:active::before {
+  background: linear-gradient(to top, #e3e3e3, #f9f9f9);
+}
+
+input[type=file], button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+input[type=file]:hover, button:hover {
+  background-color: #007B9A;
 }
 
 button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background: #0056b3;
-}
-h1.top {
-  color: #007bff;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-.button input[type="file"] {
-  background-color: #161cc4; /* This is a green color */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.4s; /* This is for the hover effect */
-}
-
-.button input[type="file"]:hover {
-  background-color: #5e52ac; /* This is a different green color for when you hover over the button */
-}
-
-.button {
-  display: flex;
-  justify-content: center; /* This will center the button horizontally */
-  margin-bottom: 10px; /* This adds some space below the button */
+  margin: 0 auto;
+  display: block;
 }

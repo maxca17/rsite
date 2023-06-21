@@ -43,7 +43,7 @@ h1.top {
   margin-bottom: 20px;
 }
 .button input[type="file"] {
-  background-color: #4CAF50; /* This is a green color */
+  background-color: #161cc4; /* This is a green color */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -57,11 +57,11 @@ h1.top {
 }
 
 .button input[type="file"]:hover {
-  background-color: #45a049; /* This is a different green color for when you hover over the button */
+  background-color: #5e52ac; /* This is a different green color for when you hover over the button */
 }
 
 .button {
   display: flex;
   justify-content: center; /* This will center the button horizontally */
-  margin-bottom: 20px; /* This adds some space below the button */
+  margin-bottom: 10px; /* This adds some space below the button */
 }

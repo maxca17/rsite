@@ -39,7 +39,7 @@ const App = () => {
         <div className='button'>
         <input type="file" onChange={onFileChange1} />
       </div>
-      <div>
+      <div className='button'>
         <input className='button' type="file" onChange={onFileChange2} />
       </div>
       <button onClick={onFilesUpload}>Upload Files!</button>
